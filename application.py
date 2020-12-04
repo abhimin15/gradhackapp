@@ -2,6 +2,7 @@ from flask import Flask, render_template, url_for, request
 from predictor_api import make_classification
 import sqlalchemy as db
 import pymysql
+from simple_salesforce import Salesforce
 
 
 application = Flask(__name__)
@@ -19,6 +20,9 @@ application.Access_key_ID="AKIASAQV6PLTA2H7SHPD"
 engine = db.create_engine('mysql+pymysql://team8user:gradhackteam8@hsbc-team8-data.ciavwhad0erl.us-east-2.rds.amazonaws.com:3306/hsbc_team8_data')
 connection = engine.connect()
 metadata = db.MetaData()
+
+
+sf = Salesforce(username='as1997@gmail.com', password='samcro@1', security_token='Axo6qkY8ZmDgDkVM0n30pUgSJ')
 '''def connectioned():
     engine = db.create_engine('mysql+pymysql://team8user:gradhackteam8@hsbc-team8-data.ciavwhad0erl.us-east-2.rds.amazonaws.com:3306/hsbc_team8_data')
     connection = engine.connect()
@@ -85,6 +89,18 @@ def database_selection(x_input, category_prediction):
     ResultProxy = connection.execute(query)
     print("done")
 
+def connect_saleforce(x_input,category_prediction):
+    global sf
+    sf.Grievance__c.create({
+      "Type__c": category_prediction,
+      "Account__c": "hs101",
+      "Complain__c": x_input
+    })
+    print("ok")
+
+    
+
+
 @application.route("/")
 def hello():
     return "It's alive!!!"
@@ -113,6 +129,7 @@ def predict():
         print("b",x_input)
 
         database_selection(x_input,category_prediction)
+        connect_saleforce(x_input,category_prediction)
 
         return render_template('predictor.html', x_input=x_input, 
                                                 cat_prediction = category_prediction, 
