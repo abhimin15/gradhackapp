@@ -8,8 +8,8 @@ from simple_salesforce import Salesforce
 application = Flask(__name__)
 application.debug=True
 
-application.Secret_access_key="Pqsnm2fDrhRYHgCtoykcPGx0qABGmxCLHKlO3nm5"
-application.Access_key_ID="AKIASAQV6PLTA2H7SHPD"
+application.Secret_access_key="###################################"
+application.Access_key_ID="#######################"
 
 # An example of routing:
 # If they go to the page "/" (this means a GET request
@@ -17,12 +17,12 @@ application.Access_key_ID="AKIASAQV6PLTA2H7SHPD"
 
 # GET method is the type of request your web browser will send the website
 # When it accesses the URL of the web page
-engine = db.create_engine('mysql+pymysql://team8user:gradhackteam8@hsbc-team8-data.ciavwhad0erl.us-east-2.rds.amazonaws.com:3306/hsbc_team8_data')
+engine = db.create_engine('##############################################################################')
 connection = engine.connect()
 metadata = db.MetaData()
 
 
-sf = Salesforce(username='as1997@gmail.com', password='samcro@1', security_token='Axo6qkY8ZmDgDkVM0n30pUgSJ')
+sf = Salesforce(username='###########', password='#############', security_token='####################')
 '''def connectioned():
     engine = db.create_engine('mysql+pymysql://team8user:gradhackteam8@hsbc-team8-data.ciavwhad0erl.us-east-2.rds.amazonaws.com:3306/hsbc_team8_data')
     connection = engine.connect()
