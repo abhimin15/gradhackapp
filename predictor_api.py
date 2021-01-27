@@ -8,7 +8,7 @@ import pickle
 def raw_complaint_to_model_input(raw_input_string):
     ## KeyNote: request.args gives you an Immutable Dictionary with a key: value pair of what the user inputs into the form
     ## The input here has to be a raw string! Therefore, use a request.get('chat_in') to get the value from the name button
-    # Converts string into cleaned and vectorized text, converts it to model input
+    # Converts string into cleaned and vectorized 
     with open('data/fitted_tfidf_to_use.pickle', 'rb') as to_read:
         fitted_tfidf_to_use = pickle.load(to_read)  # Pickled file is a Tfidf object already fitted with training data
     # importing TfidfVectorizer will allow you to call the methods off the pickled trained TfidfVectorizer
