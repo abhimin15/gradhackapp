@@ -6,7 +6,7 @@ import pandas as pd
 import pickle
 
 def raw_complaint_to_model_input(raw_input_string):
-    ## KeyNote: request.args gives you an Immutable Dictionary with a key: value pair of what the user inputs into the form
+    ## KeyNote: request.argss
 
     with open('data/fitted_tfidf_to_use.pickle', 'rb') as to_read:
         fitted_tfidf_to_use = pickle.load(to_read)  # Pickled file is a Tfidf object already fitted with training data
