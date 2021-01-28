@@ -8,6 +8,7 @@ import pickle
 # No one
 def raw_complaint_to_model_input(raw_input_string):
     ## KeyNote: request.argss
+    #this is rediculous
 
 
     with open('data/fitted_tfidf_to_use.pickle', 'rb') as to_read:
