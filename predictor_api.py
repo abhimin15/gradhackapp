@@ -1,4 +1,4 @@
-# predictor_api.py - contains functions to run model
+# predictor_api.py
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.linear_model import LogisticRegression
 import numpy as np
