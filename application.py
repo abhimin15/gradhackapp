@@ -11,7 +11,6 @@ application.debug=True
 application.Secret_access_key="###################################"
 application.Access_key_ID="#######################"
 
-# An example of routing:
 # If they go to the page "/" (this means a GET request
 # to go to the page httP://127.0.0.1:5000/)
 
